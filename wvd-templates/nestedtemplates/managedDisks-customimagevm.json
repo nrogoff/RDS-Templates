@@ -166,7 +166,7 @@
                 "hardwareProfile": {
                     "vmSize": "[parameters('rdshVmSize')]"
                 },
-                "availabilitySet": "[if(not(equals(variables('availabilitySetId').id, json('null'))), variables('availabilitySetId'), json('null'))]",
+                "availabilitySet": "",
                 "osProfile": {
                     "computerName": "[concat(parameters('rdshPrefix'), copyindex())]",
                     "adminUsername": "[parameters('existingDomainUsername')]",
@@ -192,7 +192,7 @@
                 },
                 "diagnosticsProfile": {
                     "bootDiagnostics": {
-                        "enabled": false
+                        "enabled": true
                     }
                 },
                 "licenseType": "Windows_Client"
